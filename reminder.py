@@ -21,8 +21,8 @@ my_path = os.path.join("Documents","Tasks.txt")
 
 def writeToFile(text):
     try: 
-        with open(my_path,mode = 'a', encoding = 'cp1252') as f:
-            f.write(text)
+        f = open(my_path,mode = 'a', encoding = 'cp1252')
+        f.write(text)
     finally:
         f.close()
 
@@ -69,7 +69,7 @@ def setRem():
             writeToFile(text)  
             print(text)          
 
-    except speech_recognition.RequestError:
+    except sr.RequestError:
         print('ERROR')    
 
 # WEATHER MODULE
